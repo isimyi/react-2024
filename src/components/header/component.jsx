@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <header>
-      <h1>Restaurants</h1>
+      <h1>Order food</h1>
     </header>
   )
 };
