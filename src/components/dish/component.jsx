@@ -3,11 +3,14 @@ export const Dish = ({dish}) => {
     <div>
       <h4>{dish.name}</h4>
       <div>{dish.price}</div>
-      <ul>
-        {dish.ingredients.map((ingredient) => (
-          <li>{ingredient}</li>
-        ))}
-      </ul>
+
+      {!!dish.ingredients.length && (
+        <ul>
+          {dish.ingredients.map((ingredient) => (
+            <li>{ingredient}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
