@@ -1,3 +1,5 @@
+import { CounterControl } from "../counter_control/component.jsx";
+
 export const Dish = ({dish}) => {
   return (
     <div>
@@ -11,6 +13,8 @@ export const Dish = ({dish}) => {
           ))}
         </ul>
       )}
+
+      <CounterControl/>
     </div>
   );
 };
