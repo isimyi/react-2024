@@ -1,4 +1,4 @@
-import { CounterControl } from "../counter_control/component.jsx";
+import { CounterControl } from "../counterControl/component.jsx";
 
 export const Dish = ({dish}) => {
   return (
