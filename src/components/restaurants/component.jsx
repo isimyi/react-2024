@@ -9,18 +9,13 @@ export const Restaurants = () => {
     )
   }
 
-  const [selectedRestaurant, setSelectedRestaurant] = useState(restaurants[0]);
-
-  const handleRestaurantTabClick = (event) => {
-    const restaurantId = event.target?.id;
-    const restaurant = restaurants.find((restaurant) => restaurant.id === restaurantId);
-    setSelectedRestaurant(restaurant);
-  };
+  const [selectedRestaurantIndex, setSelectedRestaurantIndex] = useState(0);
+  const selectedRestaurant = restaurants[selectedRestaurantIndex];
 
   return (
     <div>
-      {restaurants.map((restaurant) => (
-        <button id={restaurant?.id} onClick={handleRestaurantTabClick}>{restaurant?.name}</button>
+      {restaurants.map((restaurant, index) => (
+        <button onClick={() => setSelectedRestaurantIndex(index)}>{restaurant?.name}</button>
       ))}
 
       {selectedRestaurant && (
