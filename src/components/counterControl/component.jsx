@@ -1,25 +1,10 @@
-import { useState } from "react";
-
-export const CounterControl = () => {
-  const [count, setCount] = useState(0);
-
-  const decreaseCount = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
-
-  const increaseCount = () => {
-    if (count < 5) {
-      setCount(count + 1);
-    }
-  }
+export const CounterControl = ({value = 0, minValue = 0, maxValue = 5, onCountChange}) => {
 
   return (
     <div>
-      <button onClick={decreaseCount}>-</button>
-      <span>{count}</span>
-      <button onClick={increaseCount}>+</button>
+      <button disabled={value === minValue} onClick={() => onCountChange(value - 1)}>-</button>
+      <span>{value}</span>
+      <button disabled={value === maxValue} onClick={() => onCountChange(value + 1)}>+</button>
     </div>
   )
 }
