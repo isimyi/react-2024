@@ -23,8 +23,10 @@ export const Dish = ({dish}) => {
 
       <CounterControl
         value={count}
-        increment={increment}
-        decrement={decrement}
+        minValue={initialDishMinCount}
+        maxValue={initialDishMaxCount}
+        onIncrement={increment}
+        onDecrement={decrement}
       />
     </div>
   );

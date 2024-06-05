@@ -1,12 +1,10 @@
-import { useCount } from "../../hooks/use-count.js";
-
-export const CounterControl = ({value = 0, minValue = 0, maxValue = 5, increment, decrement}) => {
+export const CounterControl = ({value = 0, minValue = 0, maxValue = 5, onIncrement, onDecrement}) => {
 
   return (
     <div>
-      <button disabled={value === minValue} onClick={decrement}>-</button>
+      <button disabled={value === minValue} onClick={onDecrement}>-</button>
       <span>{value}</span>
-      <button disabled={value === maxValue} onClick={increment}>+</button>
+      <button disabled={value === maxValue} onClick={onIncrement}>+</button>
     </div>
   )
 }
