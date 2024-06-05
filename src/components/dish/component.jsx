@@ -3,11 +3,6 @@ import { useState } from "react";
 
 export const Dish = ({dish}) => {
   const initialDishCount = 0;
-  const [dishCount, setDishCount] = useState(initialDishCount);
-
-  const handleDishCountChange = () => {
-    setDishCount(dishCount);
-  };
 
   return (
     <div>
@@ -23,8 +18,7 @@ export const Dish = ({dish}) => {
       )}
 
       <CounterControl
-        value={dishCount}
-        onCountChange={setDishCount}
+        initialValue={0}
       />
     </div>
   );
