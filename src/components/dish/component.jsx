@@ -1,8 +1,12 @@
-import { CounterControl } from "../counterControl/component.jsx";
-import { useState } from "react";
+import { CounterControl } from "../counter-control/component.jsx";
+import { useCount } from "../../hooks/use-count.js";
 
 export const Dish = ({dish}) => {
   const initialDishCount = 0;
+  const initialDishMinCount = 0;
+  const initialDishMaxCount = 5;
+
+  const {increment, decrement, count} = useCount(initialDishCount, initialDishMinCount, initialDishMaxCount);
 
   return (
     <div>
@@ -18,7 +22,9 @@ export const Dish = ({dish}) => {
       )}
 
       <CounterControl
-        initialValue={0}
+        value={count}
+        increment={increment}
+        decrement={decrement}
       />
     </div>
   );
