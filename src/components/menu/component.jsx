@@ -5,15 +5,20 @@ export const Menu = ({menu}) => {
   return (
     <section>
       <h3>Menu</h3>
-      <ul>
-        {menu.map((dish) => (
-          <li>
-            <Dish
-              dish={dish}
-            />
-          </li>
-        ))}
-      </ul>
+
+      {menu?.length === 0 ? (
+        <div>Menu is empty</div>
+      ) : (
+        <ul>
+          {menu.map((dish) => (
+            <li>
+              <Dish
+                dish={dish}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };
