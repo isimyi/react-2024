@@ -5,13 +5,13 @@ export const ButtonComponent = ({ children, onClick, isDisabled }) => {
   const theme = useContext(ThemeContext);
 
   return (
-    <ButtonComponent
+    <button
       disabled={isDisabled}
       onClick={onClick}
       style={theme === 'dark' ?
         { backgroundColor: "midnightblue", color: "white" } :
         { backgroundColor: "lightskyblue", color: "darkslategrey" }}>
       {children}
-    </ButtonComponent>
+    </button>
   )
 };

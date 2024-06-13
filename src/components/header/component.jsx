@@ -18,7 +18,7 @@ export const Header = () => {
       </ButtonComponent>
 
       <ButtonComponent
-        onClick={setCurrentUser(currentUser !== null ? null : "Hideo Kojima")}>
+        onClick={() => setCurrentUser(currentUser !== null ? null : "Hideo Kojima")}>
         {logInButtonText}
       </ButtonComponent>
     </header>

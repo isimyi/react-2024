@@ -1,9 +1,11 @@
 import { CounterControl } from "../counterControl/component.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CurrentUserContext } from "../../App.jsx";
 
 export const Dish = ({dish}) => {
   const initialDishCount = 0;
   const [dishCount, setDishCount] = useState(initialDishCount);
+  const {currentUser} = useContext(CurrentUserContext);
 
   const handleDishCountChange = () => {
     setDishCount(dishCount);
@@ -22,10 +24,12 @@ export const Dish = ({dish}) => {
         </ul>
       )}
 
-      <CounterControl
-        value={dishCount}
-        onCountChange={setDishCount}
-      />
+      {currentUser && (
+        <CounterControl
+          value={dishCount}
+          onCountChange={setDishCount}
+        />
+      )}
     </div>
   );
 };
