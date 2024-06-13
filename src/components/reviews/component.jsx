@@ -1,4 +1,5 @@
 import { Review } from "../review/component.jsx";
+import { ReviewForm } from "../reviewForm/component.jsx";
 
 export const Reviews = ({reviews}) => {
 
@@ -19,6 +20,8 @@ export const Reviews = ({reviews}) => {
           ))}
         </ul>
       )}
+
+      <ReviewForm/>
     </section>
   )
 }

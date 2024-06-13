@@ -1,6 +1,7 @@
 import { restaurants } from "../../constants/mock.js";
 import { Restaurant } from "../restaurant/component.jsx";
 import { useState } from "react";
+import { ButtonComponent } from "../buttonComponent/component.jsx";
 
 export const Restaurants = () => {
   if (restaurants === null || restaurants.length === 0) {
@@ -15,7 +16,10 @@ export const Restaurants = () => {
   return (
     <div>
       {restaurants.map((restaurant, index) => (
-        <button onClick={() => setSelectedRestaurantIndex(index)}>{restaurant?.name}</button>
+        <ButtonComponent
+          onClick={() => setSelectedRestaurantIndex(index)}>
+          {restaurant?.name}
+        </ButtonComponent>
       ))}
 
       {selectedRestaurant && (
