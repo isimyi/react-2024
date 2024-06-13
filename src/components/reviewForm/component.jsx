@@ -1,5 +1,6 @@
 import { RatingControl } from "../ratingControl/component.jsx";
 import { useReducer } from "react";
+import { ButtonComponent } from "../buttonComponent/component.jsx";
 
 const INITIAL_FORM_STATE = {
   userName: "",
@@ -60,10 +61,10 @@ export const ReviewForm = () => {
         />
       </div>
 
-      <button
+      <ButtonComponent
         onClick={() => dispatch({ type: "setInitialValues" })}>
         Send review
-      </button>
+      </ButtonComponent>
     </div>
   );
 };
